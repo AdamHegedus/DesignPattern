@@ -1,7 +1,11 @@
 package com.epam.hujj.designpattern.restaurant.domain;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class Mustard implements Product {
 
+	private Logger logger = LoggerFactory.getLogger(Mustard.class);
     private final double HAPPINESS_MODIFIER = 1.0;
 
     /**
@@ -14,6 +18,7 @@ public class Mustard implements Product {
 
     @Override
     public double getHappinessModifier(double happiness) {
+    	logger.debug(getProductName()+ " Happiness modifier: " + HAPPINESS_MODIFIER);
         return HAPPINESS_MODIFIER;
     }
 

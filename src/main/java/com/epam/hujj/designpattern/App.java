@@ -30,6 +30,7 @@ public class App {
                 .getMenuItem(MenuItems.CHIPS_WITH_KETCHUP_AND_MUSTARD));
         menu.add(productFactory.getMenuItem(MenuItems.CHIPS_WITH_MUSTARD));
         menu.add(productFactory.getMenuItem(MenuItems.HOTDOG_WITH_KETCHUP));
+        menu.add(productFactory.getMenuItem(MenuItems.NONE));
 
         Menu m = new Menu(menu);
         client.orderMenu(m);
