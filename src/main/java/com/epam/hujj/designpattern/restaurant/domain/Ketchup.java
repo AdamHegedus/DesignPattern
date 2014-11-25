@@ -1,11 +1,25 @@
 package com.epam.hujj.designpattern.restaurant.domain;
 
-public class Ketchup implements Extra {
+public class Ketchup implements Product {
 
-    private double modifier = 2.0;
+    private final double HAPPINESS_MODIFIER = 2.0;
+    private Product product;
 
-    public double modifyHappiness(final double happiness) {
-        return happiness * modifier;
+    /**
+     * Sets the product.
+     * @param product, the original product
+     */
+    public Ketchup(Product product) {
+        this.product = product;
     }
 
+    @Override
+    public double getHappinessModifier(double happiness) {
+        return product.getHappinessModifier(happiness) * HAPPINESS_MODIFIER;
+    }
+
+    @Override
+    public String getProductName() {
+        return "Ketchup";
+    }
 }

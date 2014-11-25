@@ -1,11 +1,25 @@
 package com.epam.hujj.designpattern.restaurant.domain;
 
-public class Mustard implements Extra {
+public class Mustard implements Product {
 
-    private double modifier = 1.0;
+    private final double HAPPINESS_MODIFIER = 1.0;
 
-    public double modifyHappiness(double happiness) {
-        return happiness + modifier;
+    /**
+     * The given parameter is not used because the Mustard defeats the effect of
+     * a product and returns a constant.
+     * @param not used
+     */
+    public Mustard(Product product) {
+    }
+
+    @Override
+    public double getHappinessModifier(double happiness) {
+        return HAPPINESS_MODIFIER;
+    }
+
+    @Override
+    public String getProductName() {
+        return "Mustard";
     }
 
 }

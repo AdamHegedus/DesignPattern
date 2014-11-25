@@ -2,14 +2,15 @@ package com.epam.hujj.designpattern.restaurant.domain;
 
 public class Chips implements Product {
 
-    private double modifier = 1.05;
+    private final double HAPPINESS_MODIFIER = 0.05;
 
-    public double calculateHappiness(double happiness) {
-        return happiness * modifier;
+    @Override
+    public double getHappinessModifier(double happiness) {
+        return HAPPINESS_MODIFIER * happiness;
     }
 
-    public String getName() {
+    @Override
+    public String getProductName() {
         return "Chips";
     }
-
 }
