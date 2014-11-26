@@ -35,9 +35,8 @@ public class ClientTest {
         EasyMock.replay(menu);
 
         double expected = Double.valueOf(10.0);
-        underTest.orderMenu(menu);
         // WHEN
-        underTest.consume();
+        underTest.consume(menu);
         // THEN
         double actual = underTest.getHappiness();
         Assert.assertEquals(expected, actual);

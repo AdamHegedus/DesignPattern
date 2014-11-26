@@ -8,11 +8,6 @@ public interface ClientType {
      * Client consumes the foods on the menu which is being ordered. It sets the
      * happiness of a client based on the menu items.
      */
-    public void consume();
+    public void consume(final Menu menu);
 
-    /**
-     * The client orders a menu.
-     * @param menu, the list of Products the client ordered
-     */
-    public void orderMenu(Menu menu);
 }

@@ -14,7 +14,6 @@ public class Client implements ClientType {
 
     private Logger logger = LoggerFactory.getLogger(Client.class);
     private double happiness;
-    private Menu menu;
 
     /**
      * Sets the default happiness for the client when it's coming in the
@@ -23,18 +22,14 @@ public class Client implements ClientType {
      */
     public Client(final double happiness) {
         this.happiness = happiness;
+        logger.info("A new client comes in with happiness: " + happiness);
     }
 
     @Override
-    public void consume() {
-        logger.debug("Happiness before consuming food: " + this.happiness);
+    public void consume(final Menu menu) {
+        logger.info("Happiness before consuming food: " + this.happiness);
         happiness = menu.getFullMenuHappinessModifier(happiness);
-        logger.debug("Happiness after food consumed: " + this.happiness);
-    }
-
-    @Override
-    public void orderMenu(final Menu menu) {
-        this.menu = menu;
+        logger.info("Happiness after food consumed: " + this.happiness);
     }
 
     /**

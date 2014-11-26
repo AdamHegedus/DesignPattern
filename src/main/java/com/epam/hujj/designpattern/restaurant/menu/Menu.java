@@ -3,10 +3,13 @@ package com.epam.hujj.designpattern.restaurant.menu;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.epam.hujj.designpattern.restaurant.domain.Product;
 
 public class Menu {
-
+    private Logger logger = LoggerFactory.getLogger(Menu.class);
     private List<Product> products = new ArrayList<Product>();
 
     /**
@@ -30,4 +33,19 @@ public class Menu {
         }
         return happiness;
     }
+
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("The Menu contains these products:");
+        for (Product product : products) {
+            result.append("\n\t");
+            result.append(product.toString());
+        }
+        return result.toString();
+    }
+
 }
