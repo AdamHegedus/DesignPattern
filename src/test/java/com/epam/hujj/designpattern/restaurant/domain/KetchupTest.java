@@ -25,4 +25,19 @@ public class KetchupTest {
         Assert.assertEquals(expected, actual);
     }
 
+    @Test
+    public void testToString() {
+        // GIVEN
+        Product product = EasyMock.createMock(Product.class);
+        underTest = new Ketchup(product);
+        EasyMock.expect(product.getProductName()).andReturn("Hot Dog");
+        EasyMock.replay(product);
+        String expected = "Hot Dog + Ketchup";
+        // WHEN
+        String actual = underTest.toString();
+        // THEN
+        Assert.assertEquals(expected, actual);
+        EasyMock.verify(product);
+    }
+
 }

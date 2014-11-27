@@ -35,6 +35,6 @@ public class Mustard implements Product {
      */
     @Override
     public String toString() {
-        return product.toString() + " + " + getProductName();
+        return product.getProductName() + " + " + getProductName();
     }
 }

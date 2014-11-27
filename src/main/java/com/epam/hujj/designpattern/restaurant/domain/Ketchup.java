@@ -34,6 +34,6 @@ public class Ketchup implements Product {
      */
     @Override
     public String toString() {
-        return product.toString() + " + " + getProductName();
+        return product.getProductName() + " + " + getProductName();
     }
 }

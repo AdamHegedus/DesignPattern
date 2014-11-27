@@ -16,6 +16,16 @@ public class HotDogTest {
         double actual = underTest.getHappinessModifier(Double.valueOf(5.0));
         // THEN
         Assert.assertEquals(expected, actual);
+    }
 
+    @Test
+    public void testToString() {
+        // GIVEN
+        underTest = new HotDog();
+        String expected = "Hot Dog";
+        // WHEN
+        String actual = underTest.toString();
+        // THEN
+        Assert.assertEquals(expected, actual);
     }
 }
